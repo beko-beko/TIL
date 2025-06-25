@@ -1,18 +1,18 @@
 <details>
-  <summary>文</summary>
+<summary>文</summary>
   
 - 文は`;`で終わる
 
-<details>
+<details>	
 <summary>選択文</summary>
 
 - プログラムの流れを選択的に分岐させる
 - if文とswitch文がある
 
 <details>
-  <summary>if文</summary>
+<summary>if文</summary>
   
-  if ( 式 ) 文
+　if ( 式 ) 文
   式を評価してその値が非0（ゼロでなければ）であれば文を実行する<br>
   
   - 制御式
@@ -42,7 +42,7 @@ else
 ```
 　制御式に定数を入れることもできるが、その場合絶対ゼロにはならない
 - 0はTrueかFalseか
-　```c
+```c
 　int a = 0;
 
 	if (a = 0){
@@ -50,7 +50,7 @@ else
 	} else {
 		puts("aは0ではありません");
 	}
-　```
+```
 1.aにゼロを代入する<br>
 2.もし、<br>
 3.式でaにゼロを代入する<br>
@@ -129,9 +129,6 @@ switch ( 制御式 ) {
 - if文、elseは1つの文しか制御できない。<br>複数の文を制御するには複合文を使う
 
 </details>
-
-
-    
 </details>
 
 <details>
