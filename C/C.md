@@ -208,6 +208,29 @@ do {
   		```
     		となる
       	 - 式を省略する場合でもセミコロンは省略不可能
+	 - 中断
+  	 ```c
+         int num;
+
+	 printf("整数は何個：");
+	 fflush(0);
+	 scanf("%d", &num);
+	 printf("終了は-9999\n");
+
+	 int i; //iをfor文外でも使うので先に定義
+	 int sum = 0; // 合計値
+	 for (i = 0; i < num; i++){ //iは中断されても回数カウントに使えるよう0を代入
+		int tmp;
+		printf("No.%d：", i + 1); // iを何番目の入力なのかの表示にも使用するため+1する
+		fflush(0);
+		scanf("%d", &tmp);
+		if (tmp == -9999) break; // 入力した値が-9999のとき中断する
+		sum += tmp; // 合計値に足し合わせていく
+	 }
+
+	 printf("合計値：%d\n", sum);
+	 printf("平均値：%.2f\n", (double)sum / i);
+  	 ```
 </details>
 
 </details>
@@ -687,5 +710,4 @@ printf("こんにちは");<br>
   
 </details>
 
-身長　ー　１００　＊　０．９　標準体重
 
