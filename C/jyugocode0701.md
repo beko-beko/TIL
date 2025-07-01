@@ -1,5 +1,6 @@
 <details>
 <summary>演習4-9</summary>
+	
 ```c
 #include <stdio.h>
 
@@ -55,10 +56,12 @@ int main(void)
 	return 0;
 }
 ```
+
 </details>
 
 <details>
 <summary>演習4-10</summary>
+	
 ```c
 #include <stdio.h>
 int main(void){
@@ -98,10 +101,12 @@ int main(void)
  * 読み込んだ整数値の個数だけ * を縦に連続して表示する。
  * なお、0 以下の整数が入力されたときは何も表示しない。
 ```
+
 </details>
 
 <details>
 <summary>演習4-11</summary>
+	
 ```c
 #include <stdio.h>
 
@@ -130,10 +135,12 @@ int main(void)
 	return 0;
 }
 ```
+
 </details>
 
 <details>
 <summary>演習4-12</summary>
+	
 ```c
 #include <stdio.h>
 
@@ -160,10 +167,12 @@ int main(void)
 	return 0;
 }
 ```
+
 </details>
 
 <details>
 <summary>リスト4-12</summary>
+	
 ```c
 // 読み込んだ正の整数値までカウントアップ（for文）
 
@@ -185,10 +194,12 @@ int main(void)
 	return 0;
 }
 ```
+
 </details>
 
 <details>
 <summary>リスト44-13</summary>
+	
 ```c
 // 読み込んだ整数の個数だけ*を連続表示（for文）
 
@@ -209,10 +220,12 @@ int main(void)
 	return 0;
 }
 ```
+
 </details>
 
 <details>
 <summary>リスト4-14</summary>
+	
 ```c
 // 指示された個数だけ整数を読み込んで合計値と平均値を表示
 
@@ -245,6 +258,7 @@ int main(void)
 
 <details>
 <summary>演習4-13</summary>
+	
 ```c
 
 #include <stdio.h>
@@ -270,10 +284,12 @@ int main(void)
 
 }
 ```
+
 </details>
 
 <details>
 <summary>演習4-14</summary>
+	
 ```c
 #include <stdio.h>
 
@@ -290,10 +306,12 @@ int main(void)
 	}
 }
 ```
+
 </details>
 
 <details>
 <summary>演習4-15</summary>
+	
 ```c
 #include <stdio.h>
 
@@ -330,10 +348,12 @@ int main(void)
 	}
 }
 ```
+
 </details>
 
 <details>
 <summary>リスト4-15</summary>
+	
 ```c
 // 指示された個数だけ整数を読み込んで合計値と平均値を表示（中断あり）
 
@@ -365,10 +385,12 @@ int main(void)
 	return 0;
 }
 ```
+
 </details>
 
 <details>
 <summary>リスト4-16</summary>
+	
 ```c
 //読み込んだ整数値以下の偶数を表示
 
@@ -389,10 +411,12 @@ int main(void)
 	return 0;
 }
 ```
+
 </details>
 
 <details>
 <summary>リスト4-17</summary>
+	
 ```c
 // 読み込んだ整数値の全約数を表示
 
@@ -413,10 +437,12 @@ int main(void)
 	return 0;
 }
 ```
+
 </details>
 
 <details>
 <summary>演習4-16</summary>
+	
 ```c
 #include <stdio.h>
 
@@ -435,10 +461,12 @@ int main(void)
 	return 0;
 }
 ```
+
 </details>
 
 <details>
 <summary>演習4-17</summary>
+	
 ```c
 #include <stdio.h>
 
@@ -457,10 +485,12 @@ int main(void)
 	return 0;
 }
 ```
+
 </details>
 
 <details>
 <summary>演習4-18></summary>
+	
 ```c
 #include <stdio.h>
 
@@ -481,4 +511,5 @@ int main(void)
 	return 0;
 }
 ```
+
 </details>
