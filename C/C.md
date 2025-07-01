@@ -133,6 +133,9 @@ switch ( 制御式 ) {
 </details>
 
 <details>
+<summary>繰り返し文</summary>
+
+<details>
 <summary>do文</summary>
 
 - 「制御式の評価で得られた値が値が真のあいだ、文を繰り返し実行せよ」という文
@@ -172,6 +175,7 @@ do {
 
 - continue文
 	- 選択文のループ本体の中でcontinue文が実行されると「ループ本体の残りの部分の実行」がスキップされて、ループ本体の終端に移動し、最初の制御式まで戻る
+   	- for文ではcontinueしてスキップされても式3部分は実行される
 
 - 無限ループ
   	選択文の制御式に必ず真とみなされる値(1など)を入れると無限ループする
@@ -231,6 +235,13 @@ do {
 	 printf("合計値：%d\n", sum);
 	 printf("平均値：%.2f\n", (double)sum / i);
   	 ```
+</details>
+
+<details>
+<summary>多重ループ</summary>
+
+	- 繰り返し文のループ本体の中に繰り返し文が含まれていると多重ループが可能
+ 
 </details>
 
 </details>
@@ -401,6 +412,22 @@ scanf("%d%d", &n1, &n2);
 　n1が一つ目の%dに、n2は二つ目の%dに読み込みされる
     
 </details>
+  
+</details>
+
+<details>
+<summary>キーワード</summary>
+
+- 特別な意味が与えられた37の語句
+- これらは変数などには使用できない
+  	| auto | break | case | char | const |
+  	| continue | default | do | double | else |
+  	| enum | extern | float | for | goto |
+  	| if | inline | int | long | register |
+  	| restrict | return | short | signed | sizeof |
+  	| static | struct | switch | typedef | union |
+  	| unsigned | void | volatile | while | _Bool |
+  	| _Complex | _Imaginary|
   
 </details>
 
@@ -653,6 +680,8 @@ int n = 51;
 - 式文
 	- 式の末尾に`;`がついて文という形になる
 	- 式の後ろに`;`を置いた文は式文という
+   	- for文やif文の制御式の後ろに；を置いてしまうと、；だけが文と認識されてプログラムがうまく動かなくなることがある
+   	- ；だけの文が空文という式文になる
 
 - プログラム
   
@@ -704,6 +733,12 @@ printf("こんにちは");<br>
    	  	日本語もint型になる
    	  	\nは一文字として扱われるので表示可能
 
+- 識別子
+  	- 変数、関数、構造体などの名前
+  	- 先頭文字は必ず非数字（大文字および小文字のアルファベットと_(アンダーバー)のこと
+  	- 大文字と小文字は区別される
+  	- 2文字目以降は非数字または数字
+  	- 識別子の文字として、非数字と数字以外に国際文字名も使える
 
     
 </details>
