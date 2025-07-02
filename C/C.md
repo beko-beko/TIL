@@ -422,16 +422,43 @@ scanf("%d%d", &n1, &n2);
 
 - 特別な意味が与えられた37の語句
 - これらは変数などには使用できない
-
-	|---|---|---|---|---|
-  	| auto | break | case | char | const |
-  	| continue | default | do | double | else |
-  	| enum | extern | float | for | goto |
-  	| if | inline | int | long | register |
-  	| restrict | return | short | signed | sizeof |
-  	| static | struct | switch | typedef | union |
-  	| unsigned | void | volatile | while | _Bool |
-  	| _Complex | _Imaginary|
+	- auto
+ 	- break
+    	- case
+       	- char
+       	- const
+       	- continue
+       	- default
+       	- do
+       	- double
+       	- else
+       	- enum
+       	- extern
+       	- float
+       	- for
+       	- goto
+       	- if
+       	- inline
+       	- int
+       	- long
+       	- register
+       	- restrict
+       	- return
+       	- short
+       	- signed
+       	- sizeof
+       	- static
+       	- struct
+       	- switch
+       	- typedef
+       	- union
+       	- unsigned
+       	- void
+       	- volatile
+       	- while
+       	- _Bool
+       	- _Complex
+       	- _Imaginary
   
 </details>
 
@@ -743,6 +770,17 @@ printf("こんにちは");<br>
   	- 大文字と小文字は区別される
   	- 2文字目以降は非数字または数字
   	- 識別子の文字として、非数字と数字以外に国際文字名も使える
+  	- _で始まる識別子やアルファベット大文字1字だけの識別子は処理系が内部的に利用する可能性があるため識別子として利用してはいけない
+
+- 区切り子
+	- 識別子やキーワードなど、各語句のあいだには基本的に空白が必要
+   	- ただし区切り子が置かれていればその前後の空白は不要
+  		ex:「case2:」は不可だが「case(2):」は可能
+	  
+   	| 主要な区切り子 |
+  	|---------------|
+  	| [] | () | {} | * | , | : | = | ; | ... | # |
+   
 
     
 </details>
