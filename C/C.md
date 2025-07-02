@@ -418,51 +418,6 @@ scanf("%d%d", &n1, &n2);
 </details>
 
 <details>
-<summary>キーワード</summary>
-
-- 特別な意味が与えられた37の語句
-- これらは変数などには使用できない
-	- auto
- 	- break
-    	- case
-       	- char
-       	- const
-       	- continue
-       	- default
-       	- do
-       	- double
-       	- else
-       	- enum
-       	- extern
-       	- float
-       	- for
-       	- goto
-       	- if
-       	- inline
-       	- int
-       	- long
-       	- register
-       	- restrict
-       	- return
-       	- short
-       	- signed
-       	- sizeof
-       	- static
-       	- struct
-       	- switch
-       	- typedef
-       	- union
-       	- unsigned
-       	- void
-       	- volatile
-       	- while
-       	- _Bool
-       	- _Complex
-       	- _Imaginary
-  
-</details>
-
-<details>
 <summary>演算子</summary>
 	
 - 単項算術演算子 
@@ -708,17 +663,125 @@ int n = 51;
 
 </details>
 
-- 式文
-	- 式の末尾に`;`がついて文という形になる
-	- 式の後ろに`;`を置いた文は式文という
-   	- for文やif文の制御式の後ろに；を置いてしまうと、；だけが文と認識されてプログラムがうまく動かなくなることがある
-   	- ；だけの文が空文という式文になる
+<details>
+<summary>配列</summary>
+
+- 要素と呼ばれる同一型の変数が直線状に連続して並んだもの<br><br>
+
+- 配列の宣言
+ 	 > 要素型 配列名\[要素数]
+	- 要素型
+   		- int型など特定の型で揃える型を指定する
+       	- 配列名
+       	  	- 変数名（識別子）
+       	- 要素数
+       	  	- 定数式にするのが原則
+       	```c
+        int a[5];
+        ```
+        - int型の変数を5個集めて作ったaという配列
+   	- int/[5]型（intの5型）と呼称する
+  	- この配列は
+  	  	a\[0]<br>
+  	  	a\[1]<br>
+  	  	a\[2]<br>
+  	  	a\[3]<br>
+  	  	a\[4]<br>
+  	　となっており、[]内のオペランドを添字と呼ぶ<br>
+    	　先頭要素から何個後ろの要素なのかを表す（1個目は0になる）
+    	　先頭要素は0からはじまるため、末尾要素は、要素数-1となる
+
+- 配列の走査
+  	- 添字式
+  	  	- 配列の要素へのアクセスは添字演算子\[ ]を使った添字式を使う
+  	- 配列の要素を一つずつ順番になぞっていくことを走査と呼ぶ
+  	- for文での書き方
+  	  	```c
+  	   	for (int i = 0; i < 5; i++)
+  	   	    a[i] = i +1;
+
+  	   	for (int i = 0; i < 5; i++)
+  	   	    printf("a[%d] = %d\n", i, a[i]);
+  	   	```
+  	   	>実行結果
+  	    	>a\[0] = 1
+  	    	>a\[1] = 2
+  	    	>a\[2] = 3
+  	  	>a\[3] = 4
+  	    	>a\[4] = 5
+  	    	変数iに添字が代入され、iに1ずつ足していく<br>
+		a\[i] = i + 1とすることで1から順に各添字の要素にしていく
+
+</details>
+
+<details>
+<summary>キーワード</summary>
+
+- 特別な意味が与えられた37の語句
+- これらは変数などには使用できない
+	- auto
+ 	- break
+    	- case
+       	- char
+       	- const
+       	- continue
+       	- default
+       	- do
+       	- double
+       	- else
+       	- enum
+       	- extern
+       	- float
+       	- for
+       	- goto
+       	- if
+       	- inline
+       	- int
+       	- long
+       	- register
+       	- restrict
+       	- return
+       	- short
+       	- signed
+       	- sizeof
+       	- static
+       	- struct
+       	- switch
+       	- typedef
+       	- union
+       	- unsigned
+       	- void
+       	- volatile
+       	- while
+       	- _Bool
+       	- _Complex
+       	- _Imaginary
+  
+</details>
 
 - プログラム
   
 　人が読めるもの　コンピュータが理解できるもの<br>
 　ソースプログラム　→　実行プログラム<br>
 　　　　　　　 コンパイル
+
+- 自由形式
+  	- 原則、自由な位置にプログラムを記述できる
+  	- 制限
+  	  	- 単語の途中に空白類文字（空白、タブ、改行）を入れてはいけない
+  	  	- 前処理指令（#ではじめるもの）は原則１行で記述しないといけない
+  	  	- 文字列リテラルや文字定数の途中で改行してはいけない
+  	  	  	- 空白類文字やコメントをはさんで隣接している文字リテラルは連結される
+
+- インデント
+  	- 段落をインデント（段付け/字下げ）という
+  	- インデントを用いて記述するとインデンテーションという
+
+- 式文
+	- 式の末尾に`;`がついて文という形になる
+	- 式の後ろに`;`を置いた文は式文という
+   	- for文やif文の制御式の後ろに；を置いてしまうと、；だけが文と認識されてプログラムがうまく動かなくなることがある
+   	- ；だけの文が空文という式文になる
 
 - コメント
 	- 伝統的コメント
