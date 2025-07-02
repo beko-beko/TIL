@@ -423,6 +423,7 @@ scanf("%d%d", &n1, &n2);
 - 特別な意味が与えられた37の語句
 - これらは変数などには使用できない
 
+	|---|---|---|---|---|
   	| auto | break | case | char | const |
   	| continue | default | do | double | else |
   	| enum | extern | float | for | goto |
