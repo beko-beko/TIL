@@ -362,10 +362,54 @@ printf("nの値は%dです。\n", n);
 > （型）式
 
 の形式で、式の型を（）の型に変更する
+
+<details>
+<summary>算術型</summary>
+
+<details>
+<summary>列挙型</summary>
+
+- 整数型
   
 <details>
-<summary>int型</summary>
-    
+<summary>enum型</summary>
+
+- エニューム・イニューム型と読む
+
+</details>
+</details>
+
+<details>
+<summary>基本型</summary>
+
+<details>
+<summary>char型</summary>
+
+</details>
+
+<details>
+<summary>符号付き整数型</summary>
+
+<details>
+<summary>signed char型</summary>
+
+- 文字型
+
+</details>
+
+<details>
+<summary>(signed) short (int)型</summary>
+
+- shortと省略可
+- int系型
+
+</details>
+
+<details>
+<summary>(signed) int型</summary>
+
+- intと省略可
+- int系型
 - 整数型      
 - 小数点以下の数は扱えない
 - int型で確実に表現できる値は-32767から32767まで<br>
@@ -379,6 +423,77 @@ int x = 3.5; int y = x + 5.7;
 ```
 　とすると、yに代入される値は8になる
          
+</details>
+
+<details>
+<summary>(signed) long (int)型</summary>
+
+- longと省略可
+- int系型
+
+</details>
+
+<details>
+<summary>(signed) long long (int)型</summary>
+
+- long longと省略可
+- int系型
+  
+</details>
+
+</details>
+
+<details>
+<summary>符号無し整数型</summary>
+
+<details>
+<summary>unsigned char型</summary>
+
+- 文字型
+
+</details>
+
+<details>
+<summary>unsigned short (int)型</summary>
+
+- unsigned shortと省略可
+- int系型
+
+</details>
+
+<details>
+<summary>unsigned (int)型</summary>
+
+- unsignedと省略可
+- int系型
+  
+</details>
+
+<details>
+<summary>unsigned long (int)型</summary>
+
+unusigned longと省略可
+- int系型
+  
+</details>
+
+<details>
+<summary>unsigned long long (int)型</summary>
+
+- unsigned long longと省略可
+- int系型
+  
+</details>
+
+</details>
+
+<details>
+
+<summary>浮動小数点型</summary>
+
+<details>
+<summary>float型</summary>
+
 </details>
 
 <details>
@@ -396,9 +511,29 @@ printf("円周率は%fです。", x)
 - double型では小数点以下6桁まで表示される（5.2は5.200000となる）
     
 </details>
-  
+
+<details>
+<summary>long double型</summary>
+	
 </details>
   
+</details>
+
+<details>
+<summary>整数型</summary>
+
+- 有限範囲の連続した整数
+- 符号付き整数型(signed)
+  	- 負/0/正を表現する整数型
+- 符号無し整数型(unsignd)
+  	- 0/正を表示する整数型
+- int系型は、signed/unsigndと型指定子を与えなければ符号付き型とみなされる
+- charは、単なるchar型、signd char型、unsigned char型の3つに分類される
+- charのつく型は低い、int系型の中ではshortの方が低く、long longが最も高いと表現される
+</details>
+
+</details>
+
 <details>
 <summary>関数</summary>
   
@@ -876,7 +1011,13 @@ int n = 51;
    	　プログラムに直接書かれた5や8などの定数
   	  何を表す数値なのかよく分からない数という意味
   	  文字列リテラルや文字定数内の綴りや変数名などの識別子の一部としての綴りは置換の対象外
-  	  
+
+	<details>
+	<summary>ヘッダ</summary>
+
+	- <limits.h>
+   		- 各型で表現できる最小値と最大値が提供される
+	</details>
 </details>
 
 <details>
@@ -923,6 +1064,12 @@ int n = 51;
        	- _Imaginary
   
 </details>
+
+- 記憶域クラス指定子
+  	- static
+  	  	- 関数の中でstaticをつけて宣言されたオブジェクトには静的記憶域期間が与えられる
+  	- auto
+  	  	- 関数の中でautoをつけて宣言されたオブジェクトには自動記憶域期間が与えられるが、autoをつけなかった場合も自動記憶域期間が与えられるのでつけてもつけなくても同じである
 
 - プログラム
   
