@@ -371,12 +371,9 @@ printf("nの値は%dです。\n", n);
 
 - 整数型
   
-<details>
-<summary>enum型</summary>
+- enum型
+	- エニューム・イニューム型と読む
 
-- エニューム・イニューム型と読む
-
-</details>
 </details>
 
 <details>
@@ -390,98 +387,58 @@ printf("nの値は%dです。\n", n);
 <details>
 <summary>符号付き整数型</summary>
 
-<details>
-<summary>signed char型</summary>
+- signed char型
+	- 文字型
 
-- 文字型
+- (signed) short (int)型
+	- shortと省略可
+	- int系型
 
-</details>
+- (signed) int型
+	- intと省略可
+	- int系型
+	- 整数型      
+	- 小数点以下の数は扱えない
+	- int型で確実に表現できる値は-32767から32767まで<br>
+	```c
+	int x = 3.5;
+	```
+	
+	　とすると、xに代入される値は3になる
+	```c
+	int x = 3.5; int y = x + 5.7;
+	```
+	　とすると、yに代入される値は8になる
 
-<details>
-<summary>(signed) short (int)型</summary>
+- (signed) long (int)型
+	- longと省略可
+	- int系型
 
-- shortと省略可
-- int系型
-
-</details>
-
-<details>
-<summary>(signed) int型</summary>
-
-- intと省略可
-- int系型
-- 整数型      
-- 小数点以下の数は扱えない
-- int型で確実に表現できる値は-32767から32767まで<br>
-```c
-int x = 3.5;
-```
-
-　とすると、xに代入される値は3になる
-```c
-int x = 3.5; int y = x + 5.7;
-```
-　とすると、yに代入される値は8になる
-         
-</details>
-
-<details>
-<summary>(signed) long (int)型</summary>
-
-- longと省略可
-- int系型
-
-</details>
-
-<details>
-<summary>(signed) long long (int)型</summary>
-
-- long longと省略可
-- int系型
-  
-</details>
-
-</details>
+- (signed) long long (int)型
+	- long longと省略可
+	- int系型
 
 <details>
 <summary>符号無し整数型</summary>
 
-<details>
-<summary>unsigned char型</summary>
+- unsigned char型
+	- 文字型
 
-- 文字型
+- unsigned short (int)型
+	- unsigned shortと省略可
+	- int系型
 
-</details>
+- unsigned (int)型
+	- unsignedと省略可
+	- int系型
 
-<details>
-<summary>unsigned short (int)型</summary>
+- unsigned long (int)型
+	- unusigned longと省略可
+	- int系型
 
-- unsigned shortと省略可
-- int系型
-
-</details>
-
-<details>
-<summary>unsigned (int)型</summary>
-
-- unsignedと省略可
-- int系型
-  
-</details>
-
-<details>
-<summary>unsigned long (int)型</summary>
-
-unusigned longと省略可
-- int系型
-  
-</details>
-
-<details>
-<summary>unsigned long long (int)型</summary>
-
-- unsigned long longと省略可
-- int系型
+- unsigned long long (int)型
+	- unsigned long longと省略可
+	- int系型
   
 </details>
 
@@ -491,31 +448,23 @@ unusigned longと省略可
 
 <summary>浮動小数点型</summary>
 
-<details>
-<summary>float型</summary>
+- float型
 
-</details>
-
-<details>
-<summary>double型</summary>
-    
-- 実数を浮動小数点数という形式で表す
-- double型はそのひとつ
-```c
-double x = 3.141592;
-printf("円周率は%fです。", x)
-```
-　→　出力結果
-> 円周率は3.141592です。
-
-- double型では小数点以下6桁まで表示される（5.2は5.200000となる）
-    
-</details>
-
-<details>
-<summary>long double型</summary>
+- double型
+	- 実数を浮動小数点数という形式で表す
+	- double型はそのひとつ
+	```c
+	double x = 3.141592;
+	printf("円周率は%fです。", x)
+	```
+	　→　出力結果
+	> 円周率は3.141592です。
 	
+	- double型では小数点以下6桁まで表示される（5.2は5.200000となる）
+    
 </details>
+
+- long double型
   
 </details>
 
@@ -530,6 +479,7 @@ printf("円周率は%fです。", x)
 - int系型は、signed/unsigndと型指定子を与えなければ符号付き型とみなされる
 - charは、単なるchar型、signd char型、unsigned char型の3つに分類される
 - charのつく型は低い、int系型の中ではshortの方が低く、long longが最も高いと表現される
+  
 </details>
 
 </details>
@@ -632,6 +582,8 @@ else		          // |
   	- この式のことを関数呼出し式という
 </details>
   
+</details>
+
 </details>
 
 </details>
