@@ -825,6 +825,8 @@ int n = 51;
 	// (double)5 : 5.0
 ```
 </details>
+
+</details>
   
 <details>
   <summary>オペランド</summary>
@@ -954,6 +956,8 @@ int n = 51;
   	  	- 探索する配列の最後に探す値を格納しておくと、必ず最後に探している要素が見つかるので負荷が減る
   	  	  - 最後の値だった場合は番兵であるとわかる
   	  	  - 末端に追加したデータを番兵と呼ぶ
+
+</details>
 
 <details>
 <summary>指令</summary>
