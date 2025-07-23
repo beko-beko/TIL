@@ -983,7 +983,14 @@ int n = 51;
   	    	void func2(int v[][3],	  int n);
   	    	void func3(int v[][2][3], int n);
   	    	```
-<img src= width="200" height="204" alt="Image" src="https://github.com/user-attachments/assets/ebc17974-5f1a-4e1b-b6d2-bd12c6dee986" /><img src= width="200" height="204" alt="Image" src="https://github.com/user-attachments/assets/c4e47958-8551-4fac-9857-35a97d158372" /><img src= width="200" height="204" alt="Image" src="https://github.com/user-attachments/assets/0c3dd64f-6183-4363-90d4-5091b84b3f26" />
+
+<table>
+<tr>
+<td><img width="200" height="204" alt="Image" src="https://github.com/user-attachments/assets/ebc17974-5f1a-4e1b-b6d2-bd12c6dee986" /></td>
+<td><img width="200" height="204" alt="Image" src="https://github.com/user-attachments/assets/c4e47958-8551-4fac-9857-35a97d158372" /></td>
+<td><img width="200" height="204" alt="Image" src="https://github.com/user-attachments/assets/0c3dd64f-6183-4363-90d4-5091b84b3f26" /></td>
+</tr>
+</table>
 
   	- 2次元配列
   	  	1. int型を3個まとめて1次元配列を派生
