@@ -983,7 +983,7 @@ int n = 51;
   	    	void func2(int v[][3],	  int n);
   	    	void func3(int v[][2][3], int n);
   	    	```
-  	    	<img width="600" height="612" alt="Image" src="https://github.com/user-attachments/assets/9e853fe7-c3e2-4698-9433-19853d335de4" />
+  	    	<img width="300" height="306" alt="Image" src="https://github.com/user-attachments/assets/cfc8aa71-7da2-4b66-8145-7e5ab44937f5" />
   	- 2次元配列
   	  	1. int型を3個まとめて1次元配列を派生
   	  	1. 1次元配列を4個まとめて2次元配列を派生
