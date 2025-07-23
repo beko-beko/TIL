@@ -978,6 +978,14 @@ int n = 51;
   	  	→ `a[1][0]` → `a[1][1]` → `a[1][2]`
   	  	→ `a[2][0]` → `a[2][1]` → `a[2][2]`
   	  - 3次元配列の添字式は\[ ]が3つ並ぶ形になる
+  	    	```c
+  	    	void func1(int v[],	  int n);
+  	    	void func2(int v[][3],	  int n);
+  	    	void func3(int v[][2][3], int n);
+  	    	```
+  	    	<img width="982" height="1003" alt="Image" src="https://github.com/user-attachments/assets/89a4976c-6801-4ebe-8918-16e2f8f273b4" />
+		<img width="982" height="1003" alt="Image" src="https://github.com/user-attachments/assets/5a68c309-b0cd-49fe-b836-f370d71ff558" />
+		<img width="982" height="1003" alt="Image" src="https://github.com/user-attachments/assets/e24d9670-c248-486c-966e-4f8e3672cf24" />
   	- 2次元配列
   	  	1. int型を3個まとめて1次元配列を派生
   	  	1. 1次元配列を4個まとめて2次元配列を派生
