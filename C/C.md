@@ -5,7 +5,7 @@
 - return文
   	- 関数が返却する値を出す式
   	- returnの後ろに置く式は0個か1個
-  	- returnの後ろに置く式は`return a;`でも`return a + b+`でも構わない
+  	- returnの後ろに置く式は`return a;`でも`return a + b`でも構わない
 
 <details>	
 <summary>選択文</summary>
