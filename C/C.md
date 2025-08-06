@@ -1439,6 +1439,16 @@ int n = 51;
 
 </details>
 
+<details>
+<summary><stdlib.h></summary>
+
+- 他のヘッダに属さなかったライブラリの寄せ集め
+
+- atoi関数
+  	- 
+
+</details>
+
 </details>
 
 - オブジェクト形式マクロ
