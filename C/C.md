@@ -1377,15 +1377,15 @@ int n = 51;
 <details>
 <summary>ヘッダ</summary>
 
-- <stdio.h>
+- stdio.hヘッダ
   	- FILENAME_MAX
-  	  	- <stdio.h>ヘッダで定義されるオブジェクト形式マクロ
+  	  	- stdio.hヘッダで定義されるオブジェクト形式マクロ
   	  	- その処理系でオープン可能であると保証されるファイル名の最大長を保持するのに必要な配列の要素数
 	  
-- <limits.h>
+- limits.hヘッダ
 	- 各型で表現できる最小値と最大値が提供される
 
-- <time.h>
+- time.hヘッダ
   	-日付と時刻
   	- time_t型
   	  	- 暦時刻
@@ -1399,14 +1399,14 @@ int n = 51;
   	- localtime関数
   	  	- 暦時刻から地方時要素別の時刻への変換
 
-- <stddef.h>
+- stddef.hヘッダ
 	- typeof宣言
 		`typedef 既存の型名 別名;`
    		- この宣言で新しく作られた名前はtypedef名と呼ばれる
-       		- sizeof演算子で生成される値の型はどの処理系でもsize_t型と表記されるようにtypeof宣言が<stddef.h>ヘッダ内で定義されている
-         - EOFは<stdio.h>内でオブジェクト形式マクロとして、負の値になるように定義されている
+       		- sizeof演算子で生成される値の型はどの処理系でもsize_t型と表記されるようにtypeof宣言がstddef.hヘッダ内で定義されている
+         - EOFはstdio.hヘッダ内でオブジェクト形式マクロとして、負の値になるように定義されている
 
-- <ctype.h>
+- ctype.hヘッダ
   	- toupper関数
   	  	- int toupper(int c)
   	  	  	- 英小文字を英大文字に変換。英小文字でなければそのまま返却
@@ -1458,7 +1458,7 @@ int n = 51;
 </details>
 
 <details>
-<summary><string.h>ヘッダ</summary>
+<summary>string.hヘッダ</summary>
 
 - 文字列関連のライブラリが多く入っている
 
@@ -1516,7 +1516,7 @@ int n = 51;
 
 </details>
 
-<details><math.h></details>
+<details>math.hヘッダ</details>
 
 - ceil関数
   	- 小数点以下の数値を切り"上げ"る
@@ -1536,7 +1536,7 @@ int n = 51;
   	- `sqrt(a)`
 
 <details>
-<summary><stdlib.h></summary>
+<summary>stdlib.hヘッダ</summary>
 
 - 他のヘッダに属さなかったライブラリの寄せ集め
 
