@@ -400,19 +400,20 @@
       ```
         と記述する
         
-      - ex : ```Java
-                int a = 1;
-                switch (a) {
-                  case 1, 2:
-                    System.out.println("x");
-                    break;
-                  case 3:
-                    System.out.println("y");
-                    break;
-                  case 4, 5:
-                    System.out.println("z");
-                } 
-             ```
+      - ex :
+      ```Java
+         int a = 1;
+         switch (a) {
+         　  case 1, 2:
+                 System.out.println("x");
+                 break;
+             case 3:
+                 System.out.println("y");
+                 break;
+             case 4, 5:
+                 System.out.println("z");
+         } 
+      ```
   - switch式
     - 変数にswitch文全体を代入することで、変数を引用したとき、switch文の結果が変数に代入される
     - defaultは省略可能だが、変数に代入する際は必須
@@ -428,32 +429,34 @@
       ```
       
 - while文
-  - `while ()`の()内の条件式がtrueの間、直後の{}で囲まれたブロック部分を繰り返し実行する
+  - `while ()`の`()`内の条件式が`true`の間、直後の`{}`で囲まれたブロック部分を繰り返し実行する
   - ```Java
        boolean a = true;
-    while (a == true) {
-      /* 中略 */ ;
-    }
+       while (a == true) {
+           /* 中略 */ ;
+       }
     ```
 
 - do-while文
   - 最初に一度は必ず実行する
-  - ex : ```Java
-            do {
-              a--;
-            } while (a < 5);
-         ```
+  - ex :
+  ```Java
+     do {
+         a--;
+     } while (a < 5);
+  ```
 
 - for文
   - 決まった回数だけ繰り返す
   - 必ずしも繰り返し条件や繰り返し時処理に利用した変数を、繰り返し条件でも使わなければならないわけではない
   - 繰り返し条件式内の各文は省略可能
       - ex: `for (;;)`
-  - ex : ```Java
-            for (int i = 0; i < 10; i++) {
-              System.out.println("ABC");
-            }
-         ```
+  - ex :
+  ```Java
+     for (int i = 0; i < 10; i++) {
+         System.out.println("ABC");
+     }
+  ```
 
 - 制御構造のネスト（入れ子）
   - ```Java
