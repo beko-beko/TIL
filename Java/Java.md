@@ -31,7 +31,7 @@
           - 引数リストは()囲まずに、半角スペースで区切って入力する
       - プログラム名は引数配列args[]に格納されない
         - プログラム名の次の引数がargs[0]から格納されていく
-        -
+        
 
 - 式
   - 演算子ではないものがオペランド（式）
@@ -376,15 +376,15 @@
   ```java
      int a = 1;
      switch (a) {
-         case 1, 2 -> {
-             System.out.println("x");
-         }
-         case 3 -> {
-             System.out.println("y");
-         }
-         case 4, 5 -> {
-             System.out.println("z");
-         }
+       case 1, 2 -> {
+         System.out.println("x");
+       }
+       case 3 -> {
+         System.out.println("y");
+       }
+       case 4, 5 -> {
+         System.out.println("z");
+       }
      }
   ```
   - 伝統的なswitch文
@@ -404,14 +404,14 @@
       ```Java
          int a = 1;
          switch (a) {
-         　  case 1, 2:
-                 System.out.println("x");
-                 break;
-             case 3:
-                 System.out.println("y");
-                 break;
-             case 4, 5:
-                 System.out.println("z");
+         　case 1, 2:
+             System.out.println("x");
+             break;
+           case 3:
+             System.out.println("y");
+             break;
+           case 4, 5:
+             System.out.println("z");
          } 
       ```
   - switch式
@@ -433,7 +433,7 @@
   - ```Java
        boolean a = true;
        while (a == true) {
-           /* 中略 */ ;
+         /* 中略 */ ;
        }
     ```
 
@@ -442,7 +442,7 @@
   - ex :
   ```Java
      do {
-         a--;
+       a--;
      } while (a < 5);
   ```
 
@@ -454,14 +454,14 @@
   - ex :
   ```Java
      for (int i = 0; i < 10; i++) {
-         System.out.println("ABC");
+       System.out.println("ABC");
      }
   ```
 
 - 制御構造のネスト（入れ子）
   - ```Java
        for (int i = 1; i < 10; i++) {
-			   for (int j = 1;  j < 10; j++) {
+	     for (int j = 1;  j < 10; j++) {
     ```
 
 - 繰り返しの中断
