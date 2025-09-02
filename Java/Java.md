@@ -235,10 +235,11 @@
 - 型変換
   - 小さい型から大きい型に変換する際は明示しなくても自動でやってくれる
   - 大きい型から小さい型に変換する際は明示しないとエラーになる
-  - ex: ```java
-           double a = 5.3;
-           int b = a; // 「bの値は"5"にならない。エラーになる」
-        ```
+  - ex:
+  ```java
+     double a = 5.3;
+     int b = a; // 「bの値は"5"にならない。エラーになる」
+  ```
     - byte型とshort型の変数にint型を代入することは、実害のない範囲で例外的に認められている
        
   - キャスト演算子
@@ -262,7 +263,7 @@
 <summary>命令</summary>
 
 - 命令実行の文
-  - `呼び出す命令の名前(引数);
+  - `呼び出す命令の名前(引数);`
 - System.out.
   標準出力という意味
 - println
@@ -271,9 +272,9 @@
   画面に出力（改行はしない）
 
 - キーボードからの入力を受け取る
-  - `String str = new java.util.Scanner(System.in).nextLine();
+  - `String str = new java.util.Scanner(System.in).nextLine();`
     - nextLine()は文字列
-  - int n = new java.util.Scanner(System.in).nextInt();
+  - `int n = new java.util.Scanner(System.in).nextInt();`
     - nextInt()は整数
   - Scanner
     - やや遅い
@@ -289,8 +290,10 @@
   - 文字列を比較するにはこの関数がいる
   - `文字列型の変数.equals(比較相手の文字列)`
 
-- Math.max(a, b)
+- Math.max()
+  - `Math.max(引数1, 引数2)`
   - 引数2つを比較して大きい方を数値が返却される
+    
 - 文字列を数値に変換する
   - Integer.parseInt(str)
     - 整数に変換
@@ -298,7 +301,7 @@
     - 小数に変換
   - ```Java
        String c = "30";
-		   System.out.println(Intrger.parseInt(c));
+	   System.out.println(Intrger.parseInt(c));
     ```
     - 上記コードも実現可能だが、Double型のcを再利用できないので、再利用したい場合は別で変数をとる
       - ```Java
@@ -309,12 +312,14 @@
 
   - Random()
     - Randomメソッドを呼び出す
-      - int r = new java.util.Random().nextInt(90);
+      - ex: `int r = new java.util.Random().nextInt(90);`
         - 以下の書き方と同じ
-          - Random random = new Random();
-          - int r = random.nextInt(90)
+        ex: ```java
+               Random random = new Random();
+               int r = random.nextInt(90)
+            ```
         - MathクラスのRandomメソッドでも可能
-          - int r = (int)(Math.random()*90);
+          - ex: `int r = (int)(Math.random()*90);`
           - double型しか返らない
     - `nextInt(90)`の場合、0～89が返る。
       1から90にしたい場合は`nextInt(90) + 1`にする
@@ -452,6 +457,8 @@
 
 <details>
 <summary>配列</summary>
+
+- 配列は参照渡しなので、同じ実体を共有する
 
 - 配列の宣言
   - `型名[] 変数名`
