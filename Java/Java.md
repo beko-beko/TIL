@@ -484,7 +484,7 @@
 
 - 配列の宣言と要素の作成を同時に行う
   - `型名[] 配列変数名 = new 型名[要素数];`
-  - ex: `int[] a = new int[5];
+  - ex: `int[] a = new int[5];`
 
 - 配列の作成と初期化
   - `型名[] 配列変数名 = new 型名[] {値1, 値2...};`または
@@ -534,11 +534,12 @@
          ;
        }
     ```
-  - ex: ```Java
-           for (int value : scores) {
-             ;
-    	   }
-    	```
+  - ex:
+  ```Java
+     for (int value : scores) {
+       ;
+     }
+  ```
 
 - 多次元配列
   - 2次元配列の宣言
@@ -575,12 +576,13 @@
   - 戻り値は一つのみ
     - 引数なしで戻り値のあるメソッド
       - ```Java
-           double getAvg() {
-           double avg = score /20;
-           return avg;
+           ～double getAvg() {
+             double avg = score /20;
+             return avg;
+           }
 
-           main() {
-           double num = h1.getAvg();
+           ～main() {
+             double num = h1.getAvg();～
            ```
 - オーバーロード（多重定義）
   - 同じ名前のメソッドを定義すること
