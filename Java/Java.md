@@ -24,6 +24,14 @@
       ;
       }
       ```
+    - コマンドライン引数
+      - main関数の引数はコマンドラインから実行する際に使う
+      - コマンドラインからJavaプログラムを起動する方法
+        - 「java プログラム名 引数リスト」
+          - 引数リストは()囲まずに、半角スペースで区切って入力する
+      - プログラム名は引数配列args[]に格納されない
+        - プログラム名の次の引数がargs[0]から格納されていく
+        -
 
 - 式
   - 演算子ではないものがオペランド（式）
@@ -304,21 +312,23 @@
 	   System.out.println(Intrger.parseInt(c));
     ```
     - 上記コードも実現可能だが、Double型のcを再利用できないので、再利用したい場合は別で変数をとる
-      - ```Java
-           String c = "30";
-           int n = Interger.parseInt(age);
-           System.out.println(n);
-        ```
+    ```Java
+       String c = "30";
+       int n = Interger.parseInt(age);
+       System.out.println(n);
+    ```
 
   - Random()
     - Randomメソッドを呼び出す
       - ex: `int r = new java.util.Random().nextInt(90);`
         - 以下の書き方と同じ
-        ex: ```java
-               Random random = new Random();
-               int r = random.nextInt(90)
-            ```
-        - MathクラスのRandomメソッドでも可能
+        ex:
+
+　　　　 ```java
+           Random random = new Random();
+           int r = random.nextInt(90)
+        ```
+       - MathクラスのRandomメソッドでも可能
           - ex: `int r = (int)(Math.random()*90);`
           - double型しか返らない
     - `nextInt(90)`の場合、0～89が返る。
@@ -330,7 +340,7 @@
 <summary>制御構文</summary>
 
 - 条件式
-  - 条件式は、評価結果がtrueまたはfalseになるものでなければならない
+  - 条件式は、評価結果が`true`または`false`になるものでなければならない
   - 文字列の比較は`文字列型の変数.equals(比較相手の文字列)`で行う
   - 条件式内に`=`を使用するのは推奨されない
 
@@ -349,43 +359,44 @@
     ```
   - if構文の種類
     - if-else構文
-      - 通常の、ifの条件式に当てはまればifの中の文を、当てはまらなければelseの中の文を実行する
+      - 通常の、`if`の条件式に当てはまれば`if`の中の文を、当てはまらなければ`else`の中の文を実行する
     - if構文
-      - ifの条件式に当てはまらなければ何もしない場合、elseを省略できる
+      - `if`の条件式に当てはまらなければ何もしない場合、`else`を省略できる
     - if-else if-else構文
-      - falseのとき更に別の条件で分岐させる
+      - `false`のとき更に別の条件で分岐させる
 
 - switch文
   - 条件式には整数（byte, short, int）、String, char型が使用可能
   - `switch`の直後の条件式は変数名を書く
   - `case`の直後には値を書き、その直後には`-> {処理内容}`を記述する
   - `default -> {処理内容}`の部分は条件に合致しないときの処理が不要な場合は省略可能
-  - 値は複数設定でき、その値のcaseにbreakがなくても下のcaseに続くことはない
-  - ex : ```Java
-            int a = 1;
-            switch (a) {
-              case 1, 2 -> {
-                System.out.println("x");
-              }
-              case 3 -> {
-                System.out.println("y");
-              }
-              case 4, 5 -> {
-                System.out.println("z");
-              }
-            }
-         ```
+  - 値は複数設定でき、その値の`case`に`break`がなくても下の`case`に続くことはない
+  - ex :
+  ```java
+     int a = 1;
+     switch (a) {
+         case 1, 2 -> {
+             System.out.println("x");
+         }
+         case 3 -> {
+             System.out.println("y");
+         }
+         case 4, 5 -> {
+             System.out.println("z");
+         }
+     }
+  ```
   - 伝統的なswitch文
     - `case`の次の値の後に`:`をつける
     - `-> {}`は使わない
-    - case内の文の最後に`break;`を置くとそのcase内の文の処理が終わるとswitch文を抜け出す
-    - `break;`を置かなかった場合、下のcaseも続けて実行される
-      - 複数の値を1つのcaseに設定するときは<br>
+    - `case`内の文の最後に`break;`を置くとその`case`内の文の処理が終わるとswitch文を抜け出す
+    - `break;`を置かなかった場合、下の`case`も続けて実行される
+      - 複数の値を1つの`case`に設定するときは<br>
         `case 1, 2:`もしくは<br>
-        ```Java
-           case 1:
-           case 2:
-        ```<br>
+      ```Java
+         case 1:
+         case 2:
+      ```
         と記述する
         
       - ex : ```Java
