@@ -444,17 +444,12 @@
          System.out.println("a");
       ```
       
-| | 書き方 | 条件値 | ラベル | 複数の値 | break |default |
-|----|----|----|----|----|----|
-| switch文 | switch(){<br>case 1 -> { | byte, short, int, char, String. enum | 定数(変数でない文字列,クラス定数, enumも可) | case 1, 2 -> | なくても下のcaseは実行されない<br>あってもエラーにはならない | default -> {<br>なくてもよい |
-| 伝統的なswitch文 | switch () {<br>case 1: | byte, short, int, char, String, enum | 定数(変数でない文字列,クラス定数,enumも可 | case 1, 2: | ないと下のcaseも実行される |default : または<br>default:<br>なくてもよい |
-| switch式 | String a = switch () {<br>case -><伝統的なswitch文は使えない | byte, short, int, char, String, enum | 定数(変数でない文字列,クラス定数,enumも可 | case 1, 2 -> | 使用不可 | 必ずいる(enumの値を網羅しているときのみ不要 |
 
 | 種類           | 書き方                                              | 条件値                         | ラベル                      | 複数の値      | break            | default           |
 |----------------|-----------------------------------------------------|-------------------------------|-----------------------------|---------------|------------------|-------------------|
-| switch文       | `switch () { case 1 -> { ... } }`                   | byte, short, int, char, String, enum | 定数(変数でない文字列,クラス定数,enumも可) | `case 1, 2 ->` | なくても下のcaseは実行されない<br>あってもエラーにはならない | `default -> { ... }`<br>なくてもよい |
-| 伝統的switch文 | `switch () { case 1: ... break; }`                  | byte, short, int, char, String, enum | 定数(変数でない文字列,クラス定数,enumも可) | `case 1, 2:`   | ないと下のcaseも実行される | `default:` または `default :`<br>なくてもよい |
-| switch式       | `String a = switch () { case 1 -> "..."; ... }`     | byte, short, int, char, String, enum | 定数(変数でない文字列,クラス定数,enumも可) | `case 1, 2 ->` | 使用不可         | 必ずいる<br>(enumの値を網羅しているときのみ不要) |
+| switch文       | `switch () { case 1 -> { ... } }`                   | byte, short, int, char, String, enum | 定数(変数でない文字列,finalつき,クラス定数,enumも可) | `case 1, 2 ->` | なくても下のcaseは実行されない<br>あってもエラーにはならない | `default -> { ... }`<br>なくてもよい |
+| 伝統的switch文 | `switch () { case 1: ... break; }`                  | byte, short, int, char, String, enum | 定数(変数でない文字列,finalつき,クラス定数,enumも可) | `case 1, 2:`   | ないと下のcaseも実行される | `default:` または `default :`<br>なくてもよい |
+| switch式       | `String a = switch () { case 1 -> "..."; ... }`     | byte, short, int, char, String, enum | 定数(変数でない文字列,finalつき,クラス定数,enumも可) | `case 1, 2 ->` | 使用不可         | 必ずいる<br>(enumの値を網羅しているときのみ不要) |
 
       
 - while文
