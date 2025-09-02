@@ -324,15 +324,16 @@
         - 以下の書き方と同じ
         ex:
 
-　　　　 ```java
-           Random random = new Random();
-           int r = random.nextInt(90)
-        ```
-       - MathクラスのRandomメソッドでも可能
-          - ex: `int r = (int)(Math.random()*90);`
-          - double型しか返らない
+```java
+   Random random = new Random();
+   int r = random.nextInt(90)
+```
+<br>		
+    - MathクラスのRandomメソッドでも可能
+	  - ex: `int r = (int)(Math.random()*90);`
+      - double型しか返らない
     - `nextInt(90)`の場合、0～89が返る。
-      1から90にしたい場合は`nextInt(90) + 1`にする
+       1から90にしたい場合は`nextInt(90) + 1`にする
 
 </details>
 
