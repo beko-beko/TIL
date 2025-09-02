@@ -443,6 +443,7 @@
          };
          System.out.println("a");
       ```
+      
 | | 書き方 | 条件値 | ラベル | 複数の値 | break |default |
 |----|----|----|----|----|----|
 | switch文 | switch(){<br>case 1 -> { | byte, short, int, char, String. enum | 定数(変数でない文字列,クラス定数, enumも可) | case 1, 2 -> | なくても下のcaseは実行されない<br>あってもエラーにはならない | default -> {<br>なくてもよい |
