@@ -766,6 +766,10 @@
 
 </details>
 
+オブジェクト指向
+１つのファイルでの開発の限界➡部品化
+現実世界を真似した➡人間にわかりやすい
+
 - ArrayIndexOutOfBoundsException
   - 配列の要素が範囲外の例外
 
