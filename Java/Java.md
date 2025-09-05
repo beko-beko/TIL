@@ -421,17 +421,17 @@
        System.out.println(n);
     ```
 
-  - Random()
-    - Randomメソッドを呼び出す
-      - ex: `int r = new java.util.Random().nextInt(90);`
-        - 以下の書き方と同じ
-        ex:
+- Random()
+  - Randomメソッドを呼び出す
+    - ex: `int r = new java.util.Random().nextInt(90);`
+      - 以下の書き方と同じ
+      ex:
 
 ```java
    Random random = new Random();
    int r = random.nextInt(90)
 ```
-<br>		
+		
     - MathクラスのRandomメソッドでも可能
 	  - ex: `int r = (int)(Math.random()*90);`
       - double型しか返らない
