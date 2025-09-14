@@ -62,8 +62,6 @@
   - リテラル
     - 数値や`true`,`false`,`'`や`"`で囲まれた文字や文字列
     - ソースコードに直接書かれた値で、コンパイル時に確定するもの
-    - リテラル中の任意の場所に`_(アンダースコア)`を含めることができる
-    - `0b`と書くと2進数
     - 符号無しは存在しない
 
     - エスケープシーケンス
@@ -185,7 +183,7 @@
 
  - 両辺を必ず評価する論理演算子
    - `&`, `|`
-     `&`と`|`がそれぞれひとつずつであれば、短絡評価を行わず、両辺を評価する
+     - `&`と`|`がそれぞれひとつずつであれば、短絡評価を行わず、両辺を評価する
 
 - .（ドット）演算子
   - 「～の」という意味
@@ -207,7 +205,7 @@
     - `型名 変数名 = 値;`
   
 - 変数名
-  - 変数など自分で名前をつけるものに使える文字を識別子という
+  - 変数など自分でつける名前
   - 1文字目
     - 小文字と大文字の英字、`_(アンダーバー)`、`$(ドル)`
   - 2文字目
@@ -284,13 +282,13 @@
     - 変数の前に(型名)を記述すると、`()`内の型に変換する
     - ex: :`int a = (int)3.2;`
     - instanceof演算子
-      - 安全にキャストできるか判定しながらキャストする演算子（テストに出ない）
-      - `変数 instanceof 型名 キャスト後格納変数名`
+      - 安全にキャストできるか判定しながらキャストする演算子
+      - `変数 instanceof 型名 キャスト後格納変数名`（テストに出ない）
       - 可能ならtrueが返る
       - キャスト後格納変数名を省略するとキャスト可能かの判定のみ行う（テストに出ない）
       - ex: `c instanceof SuperHero h`
         - cの中身がSuperHeroと見なして大丈夫ならhにSuperHero型にキャストして代入する
-      -判定とキャストを分ける場合（テストに出るのはこっち）
+      - 判定とキャストを分ける場合（テストに出るのはこっち）
 	    - ex:
 ```java
    if (c instanceof SuperHero) {  // cの中身をSuperHeroと見なして大丈夫なら
@@ -366,7 +364,7 @@
     - 同じアドレスを指しているかどうか
   - `equals`は同値性
     - 同じ内容かどうかを比較。同じアドレスでなくてもよい
-    - 
+      
 
 
 </details>
@@ -432,14 +430,14 @@
 
 - Math.max()
   - `Math.max(引数1, 引数2)`
-  - 引数2つを比較して大きい方を数値が返却される
+  - 引数2つを比較して大きい方の数値が返却される
     
 - 文字列を数値に変換する
   - Integer.parseInt(str)
     - 整数に変換
   - Double.prseDouble(str)
     - 小数に変換
-  - ```Java
+    ```Java
        String c = "30";
 	   System.out.println(Intrger.parseInt(c));
     ```
@@ -454,16 +452,17 @@
   - Randomメソッドを呼び出す
     - ex: `int r = new java.util.Random().nextInt(90);`
       - 以下の書き方と同じ
-      ex:
-
-```java
-   Random random = new Random();
-   int r = random.nextInt(90)
-```
+         - ex:
+         ```java
+            import java.util.Random;
+            Random random = new Random();
+            int r = random.nextInt(90);
+         ```
 		
     - MathクラスのRandomメソッドでも可能
 	  - ex: `int r = (int)(Math.random()*90);`
       - double型しか返らない
+        
     - `nextInt(90)`の場合、0～89が返る。
        1から90にしたい場合は`nextInt(90) + 1`にする
 	   
@@ -650,8 +649,8 @@
 
 - 配列を別の配列にコピーする
   - Arrays.copyOf()
-    `型名[] コピー先配列名 = Arrays.copyOf(コピー元配列名, コピーしたい要素数);`
-    `int[] copied = Arrays.copyOf(original, original.length);`
+    - `型名[] コピー先配列名 = Arrays.copyOf(コピー元配列名, コピーしたい要素数);`
+    - ex: `int[] copied = Arrays.copyOf(original, original.length);`
     - 要素数を増やすことも可能。その場合、追加分の要素番号の値はデフォルト値になる
   - System.arraycopy()
     - 同じサイズでしかコピーできない
