@@ -917,6 +917,7 @@
   - `public class クラス名 extends 親クラス implements 親インターフェース名1, 親インターフェース名2, ... { ... }`
 
 - implementsとextendsの使い分け
+  
 | 継承元 | 継承先 | キーワード | 継承元の数 |
 |---|---|---|---|
 | クラス | クラス | extends | 1つ |
