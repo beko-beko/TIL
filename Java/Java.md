@@ -350,7 +350,7 @@
   - すべてのクラスはどれもザックリ見れば`Object`
   - 引数にObject型を用いるとどんなインスタンスでも渡せるメソッドも作れる
 
-- Strinig
+- Strinigクラス
   - String型もクラスだが、特別扱いされているため、`""`で囲むことでインスタンスを作成できる
   - 1文字("A")でも可
   - immutable（不変）なクラス
@@ -476,6 +476,107 @@
    String result = str3.concat(str4);
 ```
 
+- compareTo()メソッド
+  - 文字列を文字コードで見て辞書順に比較する
+  - String str5 = "def";
+  - 同じ ➡ `0`
+    - ex: `str5.compareTo("def");` ➡ `0`
+  - 呼び出し元の方が辞書順後 ➡ 正の数
+    - ex:`str5.compareTo("abc");` ➡ `3` 最初の違う文字同士を比較した文字コードの値の差
+  - 呼び出し元の方が辞書順前 ➡ 負の数
+    - ex: `str5.compareTo("xyz");` ➡ `-20`
+  - 共通部分は同じなら短い方が小さい判定になる ➡ 文字列長さの差を返す
+    - ex: `str5.compareTo("defg");` ➡ `-1`
+  - compareToIgnoreCase()
+    - 大文字小文字を区別しないで比較
+    - ex: `str5.compareToIgnoreCase("DEF");` ➡ `0`
+
+  - 正規表現
+    - 文字列パターン
+      - 文字列の形式的な条件
+      - パターンマッチング
+      	- 文字列パターンに一致しているか確かめる処理
+      - "ABC"
+        - 完全一致でなければならない
+      - "A.C"
+        - `.(ピリオド)`部分にはなんでもよいのでなにか1文字があればよい
+        - ex: `"ABC".matches("A.C");` ➡ `true`
+        - `"AXC".matches("A.C");` ➡ `true`
+      - "AB*"
+        - `*(アスタリスク)`の直前の文字の0回以上の繰り返し
+        - ex: `"ABB".matches("AB*")` ➡ `true`
+        - `"AB".matches("AB*")` ➡ `true`
+        - `"A".matches("AB*")` ➡ `true`
+        - `"くぁｗせｄｒｆｔｇｙふじこｌｐ".matches(".*")` ➡ `true`
+          - `.*` ➡ 任意の1文字の0回以上の繰り返し（つまり文字列ならなんでもよい）
+          - startsWith()やendsWith()の代わりに使える
+            - ex: `s.matches("Ma.*)`
+      - "Gre{4}n"
+        - `{n}`の直前の文字のn回の繰り返し
+        - "Gre{4}n" ➡ "Greeeen"
+        - `{n,}` ➡ 直前の文字のn回以上の繰り返し
+        - `{n,m}` ➡ 直前の文字のn回以上m回以下の繰り返し
+        - `?` ➡ 直前の文字の0回または1回の繰り返し
+        - `+` ➡ 直前の文字の回以上の繰り返し
+      - "ニドラン[♀♂]"
+        - `[]`内のどれか1文字に当てはまる
+      - "[ア-ン]{4}"
+        - `[]`内の`-`を挟んだ文字と文字の中のどれか
+        - `ヤドラン` ➡ `true`
+        -  `ヒトカゲ` ➡ `true`
+        -  `\d` ➡ いずれかの数字
+        -  `\w` ➡ 英字・数字・アンダーバー
+        -  `\s` ➡ 空白文字（スペース、タブ文字、改行文字など）
+      - "^ヤ.*ン$"
+        - `^（ハｙト）` ➡ 文字列の先頭
+        - `$（ダラー）` ➡ 文字列の末尾
+        - "ヤドン" ➡ `true`
+        - "ヤドラン" ➡ `true`
+        - "ヤドキング" ➡ `false`
+
+	  - matches()メソッド
+ 
+	  - String str = "うめ,もも,さくら"
+	  - split()メソッド
+        - 文字列の分割
+        - String[] words = str.split(",") ➡ words[0] うめ words[1] もも words[2] さくら
+
+	  - join()メソッド
+        - 指定した区切り文字で文字列を連結
+        - `System.out.println(String.join("&", words))` ➡ `うめ&もも&さくら`
+
+	  - replaceall()メソッド
+        - 第1引数のいずれかに当てはまる文字列を第2引数の文字列に置換する
+        - replace()
+          - 正規表現が使えない
+        - String str7 = "abc,def:ghi"
+		- str7.replaceall("[beh]","X") ➡ `aXc,dXf:gXi`
+
+	  - replaceFirst()メソッド
+        - 第1引数に当てはまる最初の文字列を第2引数の文字列に置換する
+
+	  - format()メソッド
+        - 書式指定文字列で文字列を整える
+        - `%`をプレースホルダという
+        - 書式指定文字列
+          - `% 修飾 桁 型`
+          - 修飾
+            - `,（カンマ）` ➡ 3桁ごとにカンマを入れる
+            - `0` ➡ 空き領域を0で埋める
+            - `-` ➡ 左寄せ
+            - `+` ➡ 符号を強制表示
+          - 桁
+            - 表示桁数を指定する
+            - `.（ピリオド）`で区切りn.m形式で指定すると全体n桁、小数点以下m桁となる
+     	  - 型
+            - `d` ➡ 整数
+            - `f` ➡ 小数
+            - `s` ➡ 文字列
+            - `b` ➡ 真偽値
+            - `n` ➡ 改行
+        - ex: `String format("%sは%d歳です", "サクラ", 1);` ➡ `サクラは1歳です`
+        - System.out.printfで表示も可能
+
 - StringBufferクラスとStringBuilderクラスはよく似ている
   
 - StringBufferクラス
@@ -485,19 +586,120 @@
 
 - StringBuilderクラス
   - mutable（可変）クラス
+    - 一旦生成された文字列に対して追加や置換などを行える
   - スレッドセーフではない ➡ 処理速度が速い
   - 単一スレッド環境で文字列操作を行う場合
+  - Stringクラスとは異なりインスタンス化の際には`new`が必要（コンストラクタの呼出し）
 
+```java
+   StringBuilder sb = new StringBuilder();
+   sb.append("ABC");
+   sb.append("DEF");
+   sb.append("GHI");
+   String s = sb.toString();
+```
+
+   - 文字列を蓄えるバッファを確保する
+     - パターン1:引数なし
+       - `StringBuilder sb = new StringBuilder();`
+       - 16文字分 × 2バイト = 32バイトのバッファ容量
+     - パターン2:整数を引数にする
+       - `StirngBuilder sb = new StringBuilder(12);`
+       - 指定された文字数分のバイト容量
+     - パターン3:文字列を引数にする
+       - `StringBuilder sb = new StringBuilder("ABC");`
+       - 文字列の長さに 16 を加えた文字数分の容量
+
+   - 容量分の文字数をオーバーする命令が来ると広い領域に引っ越す
+   - 追加前の容量 × 2 + 2 の容量を確保する
+   - もし追加後新しく確保する容量を上回る場合、ピッタリ入るだけの容量を確保する
+
+   - append()メソッド
+     - その文字列の末尾に引数の文字列を連結する
+     - `sb.append("hello").append("java").append("world");`
+       - ➡ hellojavaworld
+       - 連続で文字列を連結できる
+
+   - replace()メソッド
+     - 文字列の、第1引数の位置から、第2引数の位置の直前までを、第3引数の文字列に置換する
+     - "しんぶん"
+     - sb.replace(2, 3. "かんせ");
+     - ➡ "しんかんせん"
+
+   - reverse()メソッド
+     - 文字を逆順にする
+     - "ABC" ➡ "CBA"
+
+   - insert()メソッド
+     - 第1引数の位置に、第2引数の文字列や値を挿入
+     - "パイル"
+     - sb.insert(2, "ナップ");
+     - "パイナップル"
+
+　 - delete()メソッド
+     - 第1引数の位置から第2引数の位置までの文字列を削除
+	 - "ABCDEF"
+     - sb.delete(2,4);
+	 - ➡ "ABEF"
+
+   - deleteCharAt()メソッド
+     - "ABCDE"
+     - sb.deleteCharAt(1)
+     - ➡ "ACDE"
+
+   - setCharAt()メソッド
+     - 第1引数番目の文字を、第2引数の文字に置換
+     - "ABCDE"
+     - sb.setCharAt(1, 'X')
+     - ➡ "AXCDE"
+
+   - capacity()メソッド
+     - バッファ容量を返す
+     - ex: `sb.capacity();`
+     
 - equals()
   - `==`は同一性
     - 同じアドレスを指しているかどうか
   - `equals`は同値性
     - 同じ内容かどうかを比較。同じアドレスでなくてもよい
       
+- Mathクラス
+  - すべてstaticメソッド
 
+  - Math.abs(-100)
+    - ➡ 0
+    - 絶対値(0までの距離)
+
+　- Math.max(6, 3)
+    - ➡ 6
+	- 引数の大きい方を返す
+ 
+  - Math.min(6, 3)
+    - ➡ 3
+    - 引数の小さい方を返す
+    
+  - Math.ceil(1234.56)
+    - ➡ 1235.0
+    - 切り上げ
+      
+  - Math.floor(1234.56)
+    - ➡ 1234.0
+    - 切り捨て
+      
+  - Math.round(1234.56)
+    - ➡ 1235
+    - 四捨五入
+      
+  - Math.sqrt(10000)
+    - ➡ 100.0
+      
+  - Math.random()
+
+  - Math.pow(2, 4)
+    - ➡ 16.0
+    - 第1引数を第2引数でべき乗した値を返す
 
 </details>
-
 <details>
 <summary>java.util</summary>
 
@@ -942,6 +1144,23 @@
     - 引数を渡さなくても、要素数0の配列がつくられる
     - `args.lengs`と記述すると0が返ってくる
     - 要素数0なので配列には何も入っていない。args[0]は0ではない。nullでもない。ArrayIndexOutOfBoundsExceptionがスローされる
+
+- 可変長引数
+  - 配列の形で引数を好きな数渡せる仕組み
+  - `method(int...num)`
+  - 引数の型の後ろに`...`（ピリオド3つ）をつける。その後ろに変数
+  - メソッドに1つ、引数リストの末尾にのみ指定できる
+  - `public void hoge(int...x, int y) ➡ 末尾にないから✖
+  - `public void hoge(int...x, int...y)` ➡ 複数あるから✖
+  - `public void hoge(String...str)` ➡ 配列の型は✖
+    - 配列の型を可変長引数として渡したい場合キャストする
+      
+```java
+   String[] array = {"A", "B"}
+   format(array)
+```
+
+        
 
 </details>
 
