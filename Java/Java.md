@@ -699,12 +699,114 @@
     - ➡ 16.0
     - 第1引数を第2引数でべき乗した値を返す
 
+- Systemクラス
+  - currentTimeMillis()
+    - java.utilのDateクラスの項を参照
+
 </details>
 <details>
 <summary>java.util</summary>
 
 - 便利なクラス群
-	
+
+- Dateクラス
+  - 昔ながらの日時を表す方法
+    - long値（エポックミリ秒）※ java.lang.Systemクラス
+      - 1970年1月1日0自0分0秒UTC（これをエポックという）からの経過時間（ミリ秒）
+      - `long 変数名 = System.currentTimeMillis();`
+      - 型:long型
+        - 数値なので計算しやすい
+        - そのままだと人間が読めない
+          
+    - Dateクラス
+      - java.util.Dateをインポートする
+      - long値（名前の時間データ）を人間が読める形にしたオブジェクト
+      - 内部的にはエポックミリ秒
+      - 指定日時の日時を持つDateインスタンスの生成
+        - `Date d = new Date(long 値);`
+      - 現在時刻の表示
+        - ```java
+             Date now = new Date();
+             System.out.println(now);
+          ```
+      - Dateインスタンス内部に格納されているlong値を取り出す
+        - `getTime()`
+      - long値をセットする
+        - `setTime()`
+      - 型:Date型
+        - 読みやすい
+        - 表示が簡単
+
+- Calendarクラス
+  - int型の日時情報からDateインスタンスを生成する
+
+```java
+   Calender c = Calendar.getInstance();
+   c.set(年, 月, 日, 時, 分, 秒); またはc.set(Calendar.～, 値);
+   Date d = c.getTime();
+```
+
+   - ※`～`にはYEAR, MONTH, DAY_OF_MONTH, HOUR, MINUTE, SECONDなどを指定する
+
+   - Dateインスタンスから日時のint値を生成する
+
+```java
+   Calendar c = Calendar.getInstance();
+   c.setTime(d);
+   int year = c.get(Calendar.YEAR);
+   int month = c.get(Calendar.MONTH);
+   int day = c.get(Calendar.DAY_OF_MONTH);
+   int hour = c.get(Calendar.HOUR);
+   int minute = c.get(Calendar.MINUTE);
+   int second = c.get(Calendar.SECOND);
+```
+
+   - ※ `d`にはDate型変数を指定する
+
+- SimpleDateFormatクラス　※ java.textパッケージ内
+  - Date型と文字列型を相互変換する
+  - StringからDateインスタンスを生成する
+    
+```java
+   SimpleDateFormat f = new SimpleDateFormat(書式文字列);
+   Date d = f.parse(文字列);
+```
+```java
+   SimpleDateFormat f = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+   Date d = f.parse("2023/09/18 05:53:20");
+```
+
+➡ 実行結果：`Mon Sep 18 05:53:20 JST 2023`
+
+ - DateインスタンスからStringを生成する
+   
+```java
+   SimpleDateFormt f = new SimpleDateFormat(書式文字列);
+   String s = f.format(d);
+```
+```java
+   ex:
+   SimpleDateFormat f = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+   Date d = new Date();
+   String s = f.format(d);
+```
+
+➡ 実行結果：`2025年09/18 13:41:57`
+
+  - 書式文字列に使える文字
+
+| 文字 | 意味 |
+|---|---|
+| y | 年 |
+| M | 月 |
+| d | 日 |
+| H | 時(0～23) |
+| m | 分 |
+| s | 秒 |
+| K | 時(0～11) |
+| E | 曜日 |
+| a | 午前/午後 |
+     
 </details>
 
 <details>
@@ -731,6 +833,117 @@
 - print
   画面に出力（改行はしない）
   
+</details>
+<details>
+<summary>java.timeパッケージ</summary>
+
+- 従来の日時を扱うクラスの問題を解決するためにできた新しいAPI
+- Timi APIの多くのクラスではnewが禁止されているので静的メソッドのnow()やof()を使ってインスタンスを生成する
+
+- now()メソッド
+  - 現在時刻を取得する
+  - ex:`LocalDate.now()`
+
+- of()メソッド
+  - 特定の日時を指定する
+  - ex:`LocalDate.of(2023, 9, 18)`
+
+- ofEpochSecond()
+- ofEpochMilli()
+
+- parse()メソッド
+  - DateTimeFormatterで書式指定し、文字列からインスタンスを生成する
+
+- format()メソッド
+  - 保持情報をDateTimeFormatterで書式指定し、文字列に変換する
+
+- get～()メソッド
+  - 格納されている年や月の情報を取得する
+  - ～の部分にはYear, Month, DayOfMonth, Hour, Minute, Second, Nanoなどが入る
+
+- isAfter()
+  - 引数で指定したインスタンスより未来の日付なら`true`
+- isBefore()
+  - 引数で指定したインスタンスより過去の日付なら`true`
+
+- plus～()メソッド
+- minus～()メソッド
+  - 指定した分だけ未来または過去の時点を返す
+  - ～の部分にはYear, Month, DayOfMonth, Hour, Minute, Second, Nanoなどが入る
+
+- plus()メソッド
+- minus()メソッド
+  - 指定した時間間隔の分だけ未来または過去の時点を返す
+
+
+- izEqual()メソッド
+  - Time APIのLocalDateTimeクラスなどに定義される、タイムゾーンが違っても同じ瞬間かどうかを判定するメソッド
+
+- atZone()メソッド
+  - Time APIのタイムゾーンを持たないインスタンスにタイムゾーンを指定してZonedDateTimeに変換する
+```java
+   Instant instant = Instant.now();
+   ZonedDateTime tokyoTime = instant.atZone(ZoneId.of("Asia/Tokyo"));
+```
+
+- Durationクラス
+  - 2つの時刻の間隔を格納する
+- Periodクラス
+  - 2つの日付の間隔を格納する
+  - サマータイムや閏年などを考慮し日数ベースで期間を管理する際に使う
+
+- Instantクラス（テストにあまり出ない）
+  - 世界における、ある瞬間の時刻をナノ秒単位で厳密に指し示し保持する
+  - UTC（世界共通の瞬間）
+  - エポックからの経過時間をナノ秒数で格納する
+  - Dateクラスとほぼ同じだがナノ秒単位で表せる
+
+- ZonedDateTimeクラス（テストにあまり出ない）
+  - 世界における、ある瞬間の時刻をナノ秒単位で厳密に指し示し保持する
+  - エポックからの経過時間ではなく、その場所のタイムゾーンにおける現在時刻を格納管理する
+
+- ZoneIdクラス
+  - タイムゾーンが格納されている
+  - `ZoneId.of("Asia/Tokyo")`のように`""`で囲んで指定する
+```java
+   Set<String> zoneIds = ZoneId.getAvailableZoneIds();
+   zoneIds.forEach(System.out::println);
+```
+➡ タイムゾーン一覧が見れる
+
+- LocalDateTimeクラス
+  - 日付と時刻を扱う
+
+  -  現在日時を元にインスタンスを生成する
+    - `LocalDateTime.now();`
+  - 特定の日時を指定してインスタンスを生成する
+    - `LocalDateTime.of(2024, 1, 1, 9, 5, 0, 0);` ➡ 2024年1月1日9時5分0秒0ナノ秒
+    - `LocalDateTime.of(2024, Month.JANUARY.getvalue(), 9, 5, 0, 0);` ➡ 2024年1月1日9時5分0秒0ナノ秒
+      - Month ➡ 列挙型で12か月を定義したクラス
+  - 文字列からインスタンスを生成する
+    - `LocalDateTime.parse("2024_10_10", DateTimeFormatter.ISO_DATE);`
+      - 文字列の日付を書式文字列で表示
+
+  - toLocalDateTime()メソッド
+    - LocalDateTime型に変換する
+        
+- LocalDateクラス
+  - 日付を扱う
+- LocalTimeクラス
+  - 時間を扱う
+
+- Year
+  - 年のみを扱う
+- YearMonth
+  - 年月を扱う
+- Month
+  - 月のみを扱う
+- MonthDay
+  - 月日を扱う
+
+- chrono.JapaneseDateクラス
+  - 和暦を扱える
+ 
 </details>
 	
 - System.out.
