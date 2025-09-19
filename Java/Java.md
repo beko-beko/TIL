@@ -350,6 +350,12 @@
   - すべてのクラスはどれもザックリ見れば`Object`
   - 引数にObject型を用いるとどんなインスタンスでも渡せるメソッドも作れる
 
+- Objectクラス
+  - clone()メソッド
+    - オブジェクトや配列をコピーする
+    - シャローコピー（浅いコピー、参照のコピー）
+    - 
+
 - Strinigクラス
   - String型もクラスだが、特別扱いされているため、`""`で囲むことでインスタンスを作成できる
   - 1文字("A")でも可
@@ -407,7 +413,7 @@
     - 引数の文字列で終わるかどうか
     - `true`か`false`が返る
     - 空文字も1文字として数える
-    - ex: `str1.endtsWith("ABC")` ➡ `false`
+    - ex: `str1.endsWith("ABC")` ➡ `false`
 
   - indexOf()メソッド
     - 文字列を先頭から検索
@@ -416,7 +422,7 @@
     - 空文字も1文字として数える
     - ex: `str.indexOf("にわ")` ➡ `0`
     - 第2引数に数字が渡される場合、その文字数の位置から検索を開始する
-    - ex: `str.last IndexOf("ABC", 3)` ➡ `4`
+    - ex: `str.IndexOf("ABC", 3)` ➡ `4`
 
   - lastIndexOf()メソッド
     - 文字列を末尾から検索
@@ -539,7 +545,7 @@
 	  - String str = "うめ,もも,さくら"
 	  - split()メソッド
         - 文字列の分割
-        - String[] words = str.split(",") ➡ words[0] うめ words[1] もも words[2] さくら
+        - ex: `String[] words = str.split(",")` ➡ words[0] うめ words[1] もも words[2] さくら
 
 	  - join()メソッド
         - 指定した区切り文字で文字列を連結
@@ -549,8 +555,8 @@
         - 第1引数のいずれかに当てはまる文字列を第2引数の文字列に置換する
         - replace()
           - 正規表現が使えない
-        - String str7 = "abc,def:ghi"
-		- str7.replaceall("[beh]","X") ➡ `aXc,dXf:gXi`
+        - `String str7 = "abc,def:ghi"`
+		- `str7.replaceall("[beh]","X")` ➡ `aXc,dXf:gXi`
 
 	  - replaceFirst()メソッド
         - 第1引数に当てはまる最初の文字列を第2引数の文字列に置換する
@@ -623,7 +629,7 @@
    - replace()メソッド
      - 文字列の、第1引数の位置から、第2引数の位置の直前までを、第3引数の文字列に置換する
      - "しんぶん"
-     - sb.replace(2, 3. "かんせ");
+     - ex: `sb.replace(2, 3. "かんせ");`
      - ➡ "しんかんせん"
 
    - reverse()メソッド
@@ -633,24 +639,24 @@
    - insert()メソッド
      - 第1引数の位置に、第2引数の文字列や値を挿入
      - "パイル"
-     - sb.insert(2, "ナップ");
+     - ex: `sb.insert(2, "ナップ");`
      - "パイナップル"
 
 　 - delete()メソッド
      - 第1引数の位置から第2引数の位置までの文字列を削除
 	 - "ABCDEF"
-     - sb.delete(2,4);
+     - ex: `sb.delete(2,4);`
 	 - ➡ "ABEF"
 
    - deleteCharAt()メソッド
      - "ABCDE"
-     - sb.deleteCharAt(1)
+     - ex: `sb.deleteCharAt(1)`
      - ➡ "ACDE"
 
    - setCharAt()メソッド
      - 第1引数番目の文字を、第2引数の文字に置換
      - "ABCDE"
-     - sb.setCharAt(1, 'X')
+     - ex: `sb.setCharAt(1, 'X')`
      - ➡ "AXCDE"
 
    - capacity()メソッド
@@ -708,6 +714,9 @@
 <summary>java.util</summary>
 
 - 便利なクラス群
+
+<details>
+<summary>DateクラスとCalendarクラス（その他日時を扱うクラス）</summary>
 
 - Dateクラス
   - 昔ながらの日時を表す方法
@@ -806,6 +815,52 @@
 | K | 時(0～11) |
 | E | 曜日 |
 | a | 午前/午後 |
+
+</details>
+
+<details>
+<summary>Arraysクラス</summary>
+
+- 配列の操作をする
+- 固定長
+
+- Arrays.sort()メソッド
+  - 並び替え（デフォルトで昇順）
+  - 参照型はcompareToに従って昇順
+  - `Arrays.sort(配列名)`
+
+- Arrays.toString()メソッド
+  - 配列の中身を出す
+  - `Arrays.toString(array1)`で中身を出せる
+  - `println(array1)`と`array1.toString()`はハッシュコードが出る
+
+- Arrays.binarySearch()メソッド
+  - `Arrays.binarySearch(配列名, 探す文字列)`
+  - 昇順ソートされている前提で使う
+  - 検索して要素番号を返す
+  - 見つからなければ`-(挿入ポイント+1)`（挿入してもソート順が保たれる場所）が返る
+    - -(5+1) = 6
+
+- Arrays.copyOf()メソッド
+  - 配列をコピーする
+  - 第1引数の配列の、先頭から、第2引数の数値の分の要素をコピーする
+  - 新しく配列を作るので長さを変えることが可能
+  - `Arrays.copyOf(array, 2);`
+
+- Arrays.copyOfRange()メソッド
+  - 範囲を指定してコピー
+  - 新しく配列を作るので長さを変えることが可能
+    - 新しい配列が元配列より長い場合、数値 = 0 参照型 = nullが入る 
+  - `Arrays.copyOfRange(array, コピー開始位置, コピー終了位置)`
+  - array = {"あ", "い", "う", "え", "お"} を 1 ～3 までコピーすると "い","う"がコピーされる
+
+- Arrays.fill()メソッド
+  - 配列に値をセットする
+  - 第1引数の配列の、第2引数から第3引数に、第4引数をセットする
+  - ex: `Arrays.fill(array, 2, 4, "ん")` ➡ "あ", "い", "ん", "ん", "お"
+  
+
+</details>
      
 </details>
 
@@ -1561,8 +1616,12 @@
 - オーバーライド
   - 子クラスで親クラスのメソッドを再定義すること
   - 条件
-    - 戻り値の型、メソッド名、引数の型と形がすべて同じであること
-    - 子クラス内で定義し直せば上書きされる
+    - メソッド：完全一致
+    - 仮引数：型、数、順序が完全一致
+    - 戻り値：型が一致しているかサブクラス
+    - アクセス修飾子：一致かそれよりも緩いこと
+    - throws句：一致かサブクラスであること（もしくは何も書かない：その場合try-catchで処理）
+  - 子クラス内で定義し直せば上書きされる
   - フィールドをオーバーライドすることは滅多にないので、親クラスと同名のフィールドを子クラスにつけないこと
 
 - 親クラスから見て、子クラスを複数定義することも可能
