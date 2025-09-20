@@ -1,4 +1,4 @@
-<details>
+<details open>
 <summary>メソッド</summary>
 
 <details>
