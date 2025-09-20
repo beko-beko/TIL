@@ -369,6 +369,18 @@
 <details>
 <summary>書き方一覧</summary>
 
+<table>
+  <tr>
+    <th colspan="2">ヘッダー1</th>
+    <th>ヘッダー2</th>
+  </tr>
+  <tr>
+    <td>内容1</td>
+    <td>内容2</td>
+    <td>内容3</td>
+  </tr>
+</table>
+
 - 定義
   
 | 大分類 | 小分類 | 名前 | 書き方 |
